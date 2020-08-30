@@ -3,9 +3,9 @@ import org.apache.log4j.Level
 import org.apache.log4j.Logger
 
 
-object SparkScalaTest extends App {
+object ScalaSparkTest extends App {
     Logger.getLogger("org").setLevel(Level.OFF)
-    val logFile = "D:/workspace/02ScalaSparkTest/readme.txt" // Should be some file on your system
+    val logFile = "D:/workspace/readme.txt" // Should be some file on your system
     val spark = SparkSession.builder.appName(getClass.getSimpleName).master("local[2]").getOrCreate()
     val logData = spark.read.textFile(logFile).cache()
     val numAs = logData.filter(line => line.contains("a")).count()
