@@ -34,7 +34,7 @@ totalLength = lineLengths.reduce(lambda a, b: a + b)
 print("Line count: ", totalLength)
 airportsInUSA = airports.filter(lambda line :  line.split(' ')(6).toFloat > 40)
 airportsNameAndCityNames = airportsInUSA.map(lambda line : line.split(' ').splits(1))
-#airportsNameAndCityNames.saveAsTextFile("output/airports_by_latitude.txt")
+airportsNameAndCityNames.saveAsTextFile("output/airports_by_latitude.txt")
 
 # Map Example Map
 lineLengths = airports.count()
